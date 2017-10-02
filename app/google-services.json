@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "908623653011",
+    "firebase_url": "https://boardgametracker-ca3e1.firebaseio.com",
+    "project_id": "boardgametracker-ca3e1",
+    "storage_bucket": "boardgametracker-ca3e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908623653011:android:720d69b168045c82",
+        "android_client_info": {
+          "package_name": "ca.ryanneilyoung.boardgametracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908623653011-0os08m66g4urlfo6vvqkijmtg8l50u6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.ryanneilyoung.boardgametracker",
+            "certificate_hash": "82a8b9746a4c62b1d44913c7779016bd0195ab44"
+          }
+        },
+        {
+          "client_id": "908623653011-t3hglnkmi01qm1rma9474jr5v2iispbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwW96f2rTALaICOZXulCGCQ72iGUdr_tI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908623653011-t3hglnkmi01qm1rma9474jr5v2iispbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
