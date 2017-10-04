@@ -1,6 +1,8 @@
 <resources>
 	<string name="app_name">BoardGameTracker</string>
-	<string name="action_settings">Settings</string>
+	<string name="action_settings">Search</string>
 	<string name="searchHint">Enter Board Game Title</string>
 	<string name="search">Search</string>
+	<string name="collection">View Collection</string>
+	<string name="thumbnail_content_description">Image for the Board Game</string>
 </resources>

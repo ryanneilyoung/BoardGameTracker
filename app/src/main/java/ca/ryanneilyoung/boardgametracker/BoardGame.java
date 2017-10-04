@@ -74,6 +74,6 @@ public class BoardGame
 	@Override
 	public String toString()
 	{
-		return getName() + " " + "https://www.boardgamegeek.com" + getHref() + "";
+		return getName();
 	}
 }
