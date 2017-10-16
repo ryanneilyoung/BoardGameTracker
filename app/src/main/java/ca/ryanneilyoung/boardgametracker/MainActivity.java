@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity
 				}
 				return games;
 			}
-			catch(IOException | JSONException | XmlPullParserException e)
+			catch(IOException | JSONException | XmlPullParserException | IllegalArgumentException e)
 			{
 				Log.e("Error thrown", e.getMessage());
 				e.printStackTrace();
