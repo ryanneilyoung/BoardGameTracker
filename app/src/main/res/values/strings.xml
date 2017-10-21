@@ -2,7 +2,8 @@
 	<string name="app_name">BoardGameTracker</string>
 	<string name="action_settings">Search</string>
 	<string name="searchHint">Enter Board Game Title</string>
-	<string name="search">Search</string>
 	<string name="collection">View Collection</string>
 	<string name="thumbnail_content_description">Image for the Board Game</string>
+	<string name="bgg_not_found">BGG unavailable at the moment</string>
+	<string name="no_results">No Results Found</string>
 </resources>

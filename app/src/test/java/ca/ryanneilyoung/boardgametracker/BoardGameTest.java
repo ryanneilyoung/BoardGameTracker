@@ -1,5 +1,7 @@
 package ca.ryanneilyoung.boardgametracker;
 
+import android.graphics.Bitmap;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,17 +12,17 @@ import static org.junit.Assert.*;
  */
 public class BoardGameTest
 {
-	private int BGG_ID = 13;
-	private String TYPE = "boardgame";
-	private String NAME = "Catan";
-	private int IMAGE_ID = 2419375;
-	private String HREF = "/boardgame/13/catan";
+	private final int BGG_ID = 13;
+	private final String TYPE = "boardgame";
+	private final String NAME = "Catan";
+	private final Bitmap IMAGE = null;
+	private final String HREF = "/boardgame/13/catan";
 	private BoardGame boardGame;
 
 	@Before
 	public void setUp() throws Exception
 	{
-		boardGame = new BoardGame(BGG_ID, TYPE, NAME, IMAGE_ID, HREF);
+		boardGame = new BoardGame(BGG_ID, TYPE, NAME, IMAGE, HREF);
 	}
 
 	@Test
@@ -102,26 +104,18 @@ public class BoardGameTest
 	@Test
 	public void canGetImageID() throws Exception
 	{
-		assertEquals("Wrong ImageID", IMAGE_ID, boardGame.getImageID());
+		assertEquals("Wrong Image", IMAGE, boardGame.getImage());
 	}
 
 	@Test
 	public void canChangeImageID() throws Exception
 	{
 		//given
-		int newImageId = 100;
-		boardGame.setImageID(newImageId);
+		Bitmap newImage = null;
+		boardGame.setImage(newImage);
 
 		//then
-		assertEquals("ImageID was not changed", newImageId, boardGame.getImageID());
-	}
-
-	@Test(expected = IllegalArgumentException.class)
-	public void cantChangeToInvalidImageID() throws Exception
-	{
-		//given
-		int newImageID = -100;
-		boardGame.setImageID(newImageID);
+		assertEquals("ImageID was not changed", newImage, boardGame.getImage());
 	}
 
 	@Test

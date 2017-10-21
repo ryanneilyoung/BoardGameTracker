@@ -1,29 +1,31 @@
 package ca.ryanneilyoung.boardgametracker;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Ryan on 2017-09-24.
  */
 
-public class BoardGame
+class BoardGame
 {
 	private int bggID;
 	private String type;
 	private String name;
-	private int imageID;
+	private Bitmap image;
 	private String href;
 
-	public BoardGame(int bggID, String type, String name, int imageID, String href) throws IllegalArgumentException
+	public BoardGame(int bggID, String type, String name, Bitmap image, String href) throws InvalidBoardGameException
 	{
 		validBggID(bggID);
 		validType(type);
 		validName(name);
-		validImageID(imageID);
+		validImage(image);
 		validHref(href);
 
 		this.bggID = bggID;
 		this.type = type;
 		this.name = name;
-		this.imageID = imageID;
+		this.image = image;
 		this.href = href;
 	}
 
@@ -32,7 +34,7 @@ public class BoardGame
 		return bggID;
 	}
 
-	public void setBggID(int bggID) throws IllegalArgumentException
+	public void setBggID(int bggID) throws InvalidBoardGameException
 	{
 		validBggID(bggID);
 		this.bggID = bggID;
@@ -43,7 +45,7 @@ public class BoardGame
 		return type;
 	}
 
-	public void setType(String type) throws IllegalArgumentException
+	public void setType(String type) throws InvalidBoardGameException
 	{
 		validType(type);
 		this.type = type;
@@ -54,21 +56,21 @@ public class BoardGame
 		return name;
 	}
 
-	public void setName(String name) throws IllegalArgumentException
+	public void setName(String name) throws InvalidBoardGameException
 	{
 		validName(name);
 		this.name = name;
 	}
 
-	public int getImageID()
+	public Bitmap getImage()
 	{
-		return imageID;
+		return image;
 	}
 
-	public void setImageID(int imageID) throws IllegalArgumentException
+	public void setImage(Bitmap image) throws InvalidBoardGameException
 	{
-		validImageID(imageID);
-		this.imageID = imageID;
+		validImage(image);
+		this.image = image;
 	}
 
 	public String getHref()
@@ -76,21 +78,21 @@ public class BoardGame
 		return href;
 	}
 
-	public void setHref(String href) throws IllegalArgumentException
+	public void setHref(String href) throws InvalidBoardGameException
 	{
 		validHref(href);
 		this.href = href;
 	}
 
-	private void validBggID(int bggID) throws IllegalArgumentException
+	private void validBggID(int bggID) throws InvalidBoardGameException
 	{
 		if(bggID <= 0)
 		{
-			throw new IllegalArgumentException("BGG ID must be greater than 0");
+			throw new InvalidBoardGameException("BGG ID must be greater than 0");
 		}
 	}
 
-	private void validType(String type) throws IllegalArgumentException
+	private void validType(String type) throws InvalidBoardGameException
 	{
 		switch(type)
 		{
@@ -101,35 +103,32 @@ public class BoardGame
 			case "boardgameaccessory":
 				break;
 			default:
-				throw new IllegalArgumentException("Invalid type of BoardGame");
+				throw new InvalidBoardGameException("Invalid type of BoardGame");
 		}
 	}
 
-	private void validName(String name) throws IllegalArgumentException
+	private void validName(String name) throws InvalidBoardGameException
 	{
 		if(name == null)
 		{
-			throw new IllegalArgumentException("Name must have value");
+			throw new InvalidBoardGameException("Name must have value");
 		}
 	}
 
-	private void validImageID(int imageID) throws IllegalArgumentException
+	private void validImage(Bitmap image) throws InvalidBoardGameException
 	{
-		if(imageID <= 0)
-		{
-			throw new IllegalArgumentException("Image ID must be greater than 0");
-		}
+		//TODO
 	}
 
-	private void validHref(String href) throws IllegalArgumentException
+	private void validHref(String href) throws InvalidBoardGameException
 	{
 		if(href == null)
 		{
-			throw new IllegalArgumentException("HREF must have value");
+			throw new InvalidBoardGameException("HREF must have value");
 		}
 		else if(href.split("/").length != 4)
 		{
-			throw new IllegalArgumentException("Invalid HREF format");
+			throw new InvalidBoardGameException("Invalid HREF format");
 		}
 	}
 
@@ -139,4 +138,13 @@ public class BoardGame
 	{
 		return getName();
 	}
+
+	public class InvalidBoardGameException extends Exception
+	{
+		InvalidBoardGameException(String message)
+		{
+			super(message);
+		}
+	}
 }
+
